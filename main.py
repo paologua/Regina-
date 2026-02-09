@@ -4,12 +4,12 @@ from datetime import datetime, timezone
 from typing import Optional, List, Dict, Any
 from deta import Deta
 from openai import OpenAI
-from config import OPENAI_API_KEY, DETA_PROJECT_KEY
+from config import OPENAI_API_KEY, SUPABASE_KEY
 
 # Init
 app = FastAPI(title="REGINA Backend")
 client = OpenAI(api_key=OPENAI_API_KEY)
-deta = Deta(DETA_PROJECT_KEY)
+deta = Supabase(SUPABASE_KEY)
 events_db = deta.Base("regina_events")
 
 
